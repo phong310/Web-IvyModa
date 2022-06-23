@@ -41,7 +41,7 @@
               <a class="nav-link" href="../receipt/quanly.php">
                   <i class="fas fa-receipt"></i>
                   <span>Quản lý hóa đơn</span></a>
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="../dashboard/thongke.php">
                   <i class="fas fa-sort-amount-up-alt"></i>
                   <span>Thống kê & Báo cáo</span></a>
           </li>
