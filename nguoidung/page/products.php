@@ -1,6 +1,6 @@
 <?php require ".././layout/header.php";?>
 <?php  require ".././core/ketnoi.php";
-$sql = "SELECT * FROM `sanpham` ORDER BY id DESC LIMIT 4";
+$sql = "SELECT * FROM `sanpham` ORDER BY id DESC LIMIT 8";
 $new_product = showDataAll($sql);
 $sql = "SELECT * FROM `sanpham` ORDER BY Gia_sp ASC LIMIT 4";
 $sale_product = showDataAll($sql);
@@ -18,7 +18,7 @@ $sale_product = showDataAll($sql);
         </div>
         <div class="container">
             <div class="row">
-                <div class="cartegory-left" style="width: 20%; padding-left: 7%;" >
+                <div class="cartegory-left" style="width: 20%; padding-left: 7%;">
                     <ul>
                         <li class="cartegory-left-li"><a href="#">NỮ</a>
                             <ul>
@@ -58,7 +58,7 @@ $sale_product = showDataAll($sql);
                     <div class="cartegory-right-top-item">
                         <p style="padding-left: 5%;">HÀNG NỮ MỚI VỀ</p>
                     </div>
-                    <div class="cartegory-right-top-item" >
+                    <div class="cartegory-right-top-item">
                         <button><span>Bộ lọc</span><i class="fas fa-sort-down"></i></button>
                     </div>
                     <div class="cartegory-right-top-item" style="margin-right: -19%;">
@@ -77,7 +77,8 @@ $sale_product = showDataAll($sql);
                                         <img src="http://localhost/webivymoda1/admin/images/products/<?= $products["Anh_sp"] ?>"
                                             alt="">
                                         <h1><?= $products["Tensp"] ?></h1>
-                                        <p style="font-weight: bold;"><?= number_format($products["Gia_sp"], 0, '', ',') ?><sup>VNĐ</sup></p>
+                                        <p style="font-weight: bold;">
+                                            <?= number_format($products["Gia_sp"], 0, '', ',') ?><sup>VNĐ</sup></p>
                                     </a>
                                 </div>
                                 <?php endforeach ?>
@@ -94,7 +95,8 @@ $sale_product = showDataAll($sql);
                                         <img src="http://localhost/webivymoda1/admin/images/products/<?= $products["Anh_sp"] ?>"
                                             alt="">
                                         <h1><?= $products["Tensp"] ?></h1>
-                                        <p style="font-weight: bold;"><?=  number_format($products["Gia_sp"], 0, '', ',') ?><sup>VNĐ</sup></p>
+                                        <p style="font-weight: bold;">
+                                            <?=  number_format($products["Gia_sp"], 0, '', ',') ?><sup>VNĐ</sup></p>
                                     </a>
                                 </div>
                                 <?php endforeach ?>

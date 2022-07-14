@@ -88,7 +88,8 @@ require ".././core/ketnoi.php";
     <!-- Theme color -->
     <link id="switcher" href="http://localhost/webivymoda1/public/css/default-theme.css" rel="stylesheet">
     <!-- Top Slider CSS -->
-    <link href="http://localhost/webivymoda1/public/css/sequence-theme.modern-slide-in.css" rel="stylesheet" media="all">
+    <link href="http://localhost/webivymoda1/public/css/sequence-theme.modern-slide-in.css" rel="stylesheet"
+        media="all">
 
     <!-- Main style sheet -->
     <link href="http://localhost/webivymoda1/public/css/style_login.css" rel="stylesheet">
@@ -96,17 +97,18 @@ require ".././core/ketnoi.php";
     <!-- Google Font -->
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' href='../../public/css/login.css'>
 </head>
 
 <body>
     <!-- Cart view section -->
-    <div class="container">
+    <!-- <div class="container">
         <h4 style="text-align: center;">
             <a href="trangchu.php" style="color:black; font-weight: bold;">TRANG CHỦ</a>
         </h4>
-    </div>
+    </div> -->
 
-    <section id="aa-myaccount">
+    <!-- <section id="aa-myaccount">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -163,8 +165,74 @@ require ".././core/ketnoi.php";
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
+
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="#" method="POST">
+                <h1>Tạo tài khoản</h1>
+                <span>Xin vui lòng điền các thông tin để đăng ký tài khoản</span>
+                <input type="text" placeholder="Họ và tên" name="username" required  value="<?php echo $_POST['username'] ?? '' ?>" />
+                <label style="color:red"><?= (isset($errors['username']) ? $errors['username'] : '') ?></label>
+
+                <input type="email" placeholder="Email" name="email" required value="<?php echo $_POST['email'] ?? '' ?>" />
+                <label style="color:red"><?= (isset($errors['email']) ? $errors['email'] : '') ?></label>
+
+                <input type="password" placeholder="Mật khẩu" name="password" required />
+                <label style="color:red"><?= (isset($errors['password']) ? $errors['password'] : '') ?></label>
+
+                <input type="password" placeholder="Nhập lại mật khẩu" name="repassword" required />
+                <label style="color:red"><?= (isset($errors['repassword']) ? $errors['repassword'] : '') ?></label>
+
+                <button type="submit" name="dk_submit">Đăng ký</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="#" method="POST">
+                <h1>Đăng nhập</h1>
+                <span>Vui lòng điền các thông tin để đăng nhập tài khoản</span>
+                <input type="email" placeholder="Email" name="email" required value="<?php echo $_POST['email'] ?? '' ?>" />
+                <input type="password" placeholder="Mật khẩu" name="password" required />
+                <a href="#">Forgot your password?</a>
+                <p class="aa-lost-password"> <label style="color:red"><?= (isset($message) ? $message : '') ?></label></p>
+                <button type="submit" name="submit">Đăng nhập</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Chào mừng quý khách trở lại!</h1>
+                    <p>
+                        Nếu bạn đã có tài khoản hãy đăng nhập để bắt đầu mua sắm online
+                        cùng chúng tôi!
+                    </p>
+                    <button class="ghost" id="signIn">Đăng nhập tài khoản</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Ivy Moda xin chào quý khách!</h1>
+                    <p>
+                        Nhập thông tin của bạn để đăng nhập và bắt đầu mua sắm online với
+                        chúng tôi!
+                    </p>
+                    <button class="ghost" id="signUp">Đăng ký tài khoản</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- / Cart view section -->
 </body>
+<script>
+    var SignUpBtn = document.querySelector("#signUp");
+    var SignInBtn = document.querySelector("#signIn");
+    var container = document.querySelector("#container");
+
+    SignUpBtn.addEventListener("click", function() {
+        container.classList.add("right-panel-active");
+    });
+
+    SignInBtn.addEventListener("click", function() {
+        container.classList.remove("right-panel-active");
+    });
+</script>
 
 </html>
